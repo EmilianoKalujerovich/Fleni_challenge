@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout" th:with="title='employee'">
+
+
+<th:block layout:fragment="content-head">
+	<link rel="stylesheet"
+		th:href="@{/webjars/datatables/css/jquery.dataTables.min.css}"></link>
+	<link rel="stylesheet"
+		th:href="@{/webjars/datatables/css/dataTables.bootstrap.min.css}"></link>
+</th:block>
+
+
+<th:block layout:fragment="content">
+	<section class="content">
+
+		<label>Ingrese nombre </label>
+		<br></br>
+		<input id="txtName"> </input>
+		<br></br>
+		<label>Ingrese apellido </label>
+		<br></br>
+		<input id="txtLastname"> </input>
+	
+		<br></br>
+		<label>Ingrese Email </label>
+		<br></br>
+		<input id="txtEmail"> </input>
+		<br></br>
+	
+		<label>Ingrese telefono </label>
+		<br></br>
+		<input id="txtPhone"> </input>
+	
+		<br></br>
+		<label>Ingrese fecha de contratacion </label>
+		<br></br>
+		<input id="txtDate" type="date"> </input>
+		<br></br>
+	
+		<label>Ingrese Salario </label>
+		<br></br>
+		<input id="txtSalary"> </input>
+	
+		<br></br>
+		<label>Ingrese comisión </label>
+		<br></br>
+		<input id="txtComission"> </input>
+	
+		<br></br>
+		<button class="btn btn-success" onClick="save()" > Guardar Informacion</button>
+		
+	</section>
+	
+	<div>
+		
+		<label>Ingrese calle </label>
+		<br></br>
+		<input id="txtStreet"> </input>
+		<br></br>
+		<label>Ingrese codigo postal </label>
+		<br></br>
+		<input id="txtPostal"> </input>
+	
+		<br></br>
+		<label>Ingrese ciudad </label>
+		<br></br>
+		<input id="txtCity"> </input>
+		<br></br>
+	
+		<label>Ingrese Provincia </label>
+		<br></br>
+		<input id="txtProvince"> </input>
+	
+		<br></br>
+		<label>Ingrese Pais </label>
+		<br></br>
+		<input id="txtCountry"> </input>
+		<br></br>
+	
+	    <button class="btn btn-success" onClick="saveDirection()" > Guardar Dirección</button>
+
+		<br></br>
+		<br></br>
+		<br></br>
+	
+	    <label>Employee </label>			
+		<select id="selectEmployee"  onchange="loadEmployee" ></select>
+		
+		<br></br>
+		<br></br>
+		
+		
+		
+		<label>Ingrese nombre </label>
+		<br></br>
+		<input id="txtName_new"> </input>
+		<br></br>
+		<label>Ingrese apellido </label>
+		<br></br>
+		<input id="txtLastname_new"> </input>
+	
+		<br></br>
+		<label>Ingrese Email </label>
+		<br></br>
+		<input id="txtEmail_new"> </input>
+		<br></br>
+	
+		<label>Ingrese telefono </label>
+		<br></br>
+		<input id="txtPhone_new"> </input>
+	
+		<br></br>
+		<label>Ingrese fecha de contratacion </label>
+		<br></br>
+		<input id="txtDate" type="date_new"> </input>
+		<br></br>
+	
+		<label>Ingrese Salario </label>
+		<br></br>
+		<input id="txtSalary_new"> </input>
+	
+		<br></br>
+		<label>Ingrese comisión </label>
+		<br></br>
+		<input id="txtComission_new"> </input>
+	
+		<br></br>
+		<button class= "btn btn-info" onClick="update()"> Actualizar </button>
+		
+		<button class= "btn btn-danger" onClick="deleteEmployee()"> eliminar </button>
+		
+		<br></br>
+		<br></br>
+		
+	</div>
+ 	
+ 	
+</th:block>
+
+
+
+
+<th:block layout:fragment="footer-script">
+	<script th:src="@{/webjars/bootstrap-validator/dist/validator.min.js}"></script>
+	<script th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
+	<script th:src="@{/webjars/datatables/js/dataTables.bootstrap.min.js}"></script>
+	<script th:src="@{/js/secured/usuario/employee.js}"></script>
+</th:block>
+
+
+</html>
